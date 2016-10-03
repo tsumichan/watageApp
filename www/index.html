@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="components/loader.js"></script>
+    <script src="js/ncmb-2.1.1.min.js"></script>
+    <script>
+        $(function() {
+            //mBaaSの初期化
+            var application_key = "a3b7c0fcc3dff30daf478b33a89fa1e5526f6f2532e8a06b354468810607b26a";
+            var client_key = "2fd76cb50035f957e69b1a1a5ccbc23909d35cbed854c5e3de68e35885a15cfd";
+            var ncmb = new NCMB(application_key, client_key);
+            
+            var user = ncmb.User.getCurrentUser();
+            if (user !== null) {
+                location.href = "./write.html";
+            }
+         // ログイン・新規登録処理
+            $("form").on("submit", function() {
+               var username = $("#username").val();
+               var password = $("#password").val();
+               
+               // ログイン
+               ncmb.User.login(username, password)
+               .then(function() {
+                   // ログイン成功
+                   //alert("ログイン成功");
+                   location.href = "./write.html";
+               })
+               .catch(function() {
+                   // ログイン失敗
+                   var user = new ncmb.User({
+                       userName: username,
+                       password: password
+                   });
+                   // 新規登録
+                   user.signUpByAccount()
+                   .then(function() {
+                       // ログイン成功
+                       //alert("新規登録&ログイン成功");
+                       location.href = "./write.html";
+                   })
+               });
+               return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div><img src="letter5.png" alt="手紙" /></div>
+    <p class="hello">------- Letter App -------</p>
+    <form>
+        <input type="text" id="username" placeholder="User name"/>
+        <input type="password" id="password" placeholder="password"/>
+        <input type="submit" id="login" value="新規登録・ログイン" />
+    </form>
+
+</body>
+</html>

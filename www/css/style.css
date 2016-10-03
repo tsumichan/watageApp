@@ -1,0 +1,83 @@
+/**/
+body {
+    background-color: #DBFECD;
+    padding-top: 20px;
+    font-family: Verdana, sans-serif;
+}
+#sousin,#jusin,#clear {
+    -webkit-appearance: none;
+    display: inline-block;
+    width: 90px;
+    padding: 10px 0;
+    border-style: none;
+    font-size: 15px;
+    background: #00b871;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+}
+#username,#password {
+    padding: 7px;
+    margin-bottom: 10px;
+    width: 200px;
+    font-size: 20px;
+    border-style: none;
+    border-radius: 3px;
+}
+#login {
+    -webkit-appearance: none;
+    display: inline-block;
+    width: 160px;
+    padding: 10px 0;
+    font-size: 15px;
+    background: #00b871;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+    border-style: none;
+}
+p.hello {
+    font-size: 20px;
+}
+form {
+    padding: 40px auto;
+    text-align: center;
+}
+div,p {
+    text-align: center;
+}
+li.setumei {
+    list-style-type: none;
+    text-align: left;
+    font-size: 13px;
+}
+#msg {
+    margin-bottom: 10px;
+    text-align: center;
+    color: red;
+}
+#youkoso {
+    color: #006D4D;
+}
+textarea {
+    line-height: 30px;
+    font-size: 20px;
+    background-image: -webkit-gradient(
+        linear, left top, left bottom, 
+    	color-stop(0%,#ffffcc), 
+		color-stop(96%,#ffffcc), 
+		color-stop(96%,#cccccc), 
+		color-stop(100%,#cccccc)), none;
+    background-size: 2px 30px;
+    background-clip: content-box, padding-box;
+    background-color: #ffffcc;
+    background-origin: content-box, padding-box;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-color: #ffffcc;
+}
+h3 {
+    border-bottom: 1px solid #000;
+    border-bottom-style: dashed;
+    color: #006D4D;
+}
