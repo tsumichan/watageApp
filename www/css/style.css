@@ -1,20 +1,23 @@
 /**/
 body {
-    background-color: #DBFECD;
-    padding-top: 20px;
+    background-image: url('../img/top.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: Verdana, sans-serif;
 }
-#sousin,#jusin,#clear {
+#sousin,#jusin,#clear,#okuru,#deau,#okini,#modoru {
     -webkit-appearance: none;
     display: inline-block;
     width: 90px;
     padding: 10px 0;
     border-style: none;
     font-size: 15px;
-    background: #00b871;
-    color: white;
+    background: #FBD246;
     margin-bottom: 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+}
+#okuru,#deau {
+  margin-right: 20px;
 }
 #username,#password {
     padding: 7px;
@@ -30,8 +33,7 @@ body {
     width: 160px;
     padding: 10px 0;
     font-size: 15px;
-    background: #00b871;
-    color: white;
+    background: #FBD246;
     margin-bottom: 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
     border-style: none;
@@ -57,6 +59,7 @@ li.setumei {
     color: red;
 }
 #youkoso {
+    padding-top: 20px;
     color: #006D4D;
 }
 textarea {
@@ -80,4 +83,13 @@ h3 {
     border-bottom: 1px solid #000;
     border-bottom-style: dashed;
     color: #006D4D;
+}
+
+#post {
+  list-style-type: disc;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }

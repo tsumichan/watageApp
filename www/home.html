@@ -31,47 +31,34 @@
                     location.href = "./index.html";
                 })
             });
-            
-            
-            
-                //送信ボタン
-                $('#sousin').on('click', function() {
-                    var Contents = ncmb.DataStore("Contents");
-                    var contents = new Contents();
-                    var cts= $("#content").val();
-                    //var cts= document.form.content.value;
-                    
-                    contents.set("contents", cts)
-                             .save()
-                             .then(function(){
-                                $("#msg").append("内容を送信しました！<br>");
-                             })
-                             .catch(function(err){
-                              $("#msg").html("<p>error:" + error.message + "</p>");
-                             })
-                    return false;
+                //おくる
+                $('#okuru').on('click', function() {
+                    location.href = "./write.html";
                 });
                 
-                //戻るボタン
-                $("#modoru").on("click", function() {
-                    location.href = "./home.html";
+                //であう
+                $('#deau').on('click', function() {
+                    location.href = "./show.html";
                 });
-                  
-                  });
-                  
                 
+                //おきに
+                $('#okini').on('click', function() {
+                    location.href = "./favorite.html";
+                });
+        });
         
+           
     </script>
 </head>
 <body>
     <div id ="youkoso"></div>
-        <textarea id="content" rows="5" cols="25"></textarea>
+    <div><img src="img/watage_2.png" alt="わたげちゃん" /></div>
         <div>
-        <input id="sousin" type="submit" value="送信！" >
+        <input id="okuru" type="submit" value="おくる" >
+        <input id="deau" type="submit" value="であう">
         </div>
         <div>
-        <input id="modoru" type="submit" value="戻る" >
+        <input id="okini" type="submit" value="おきに">
         </div>
-    <p id="msg"></p>
 </body>
 </html>

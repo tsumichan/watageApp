@@ -31,31 +31,33 @@
                     location.href = "./index.html";
                 })
             });
-            
-            
-            
-                //送信ボタン
-                $('#sousin').on('click', function() {
-                    var Contents = ncmb.DataStore("Contents");
-                    var contents = new Contents();
-                    var cts= $("#content").val();
-                    //var cts= document.form.content.value;
+                
+                
+                $('#jusin').on('click', function() {
+                     var Contents = ncmb.DataStore("Contents");
                     
-                    contents.set("contents", cts)
-                             .save()
-                             .then(function(){
-                                $("#msg").append("内容を送信しました！<br>");
+                    Contents.limit(100)
+                            .fetchAll()
+                            .then(function(contents){
+                              // $("#post").prepend(
+                              $("#post").prepend(
+                                    "<li>" + contents[ Math.floor( Math.random() * contents.length ) ].get("contents") + "</li><br>"
+                                    );
                              })
-                             .catch(function(err){
-                              $("#msg").html("<p>error:" + error.message + "</p>");
-                             })
-                    return false;
+                return false;
                 });
+                
+                //クリアボタン
+                $('#clear').on('click', function() {
+                    $('#post').empty();
+                });
+                
                 
                 //戻るボタン
                 $("#modoru").on("click", function() {
                     location.href = "./home.html";
                 });
+                  
                   
                   });
                   
@@ -65,13 +67,12 @@
 </head>
 <body>
     <div id ="youkoso"></div>
-        <textarea id="content" rows="5" cols="25"></textarea>
         <div>
-        <input id="sousin" type="submit" value="送信！" >
+        <input id="jusin" type="submit" value="受信！">
+        <input id="clear" type="submit" value="クリア">
+        <input id="modoru" type="submit" value="戻る">
         </div>
-        <div>
-        <input id="modoru" type="submit" value="戻る" >
-        </div>
-    <p id="msg"></p>
+    <h3>◇受信した投稿はこちら！</h3>
+    <ol id="post"></ol>
 </body>
 </html>
