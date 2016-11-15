@@ -24,10 +24,7 @@
     "description-en": "",
     "category": "User Template",
     "platform": [
-        "android",
-        "ios",
-        "winrt",
-        "chrome"
+        "ios"
     ],
-    "name": "generated-1476017853-57f27a73fd1734db06b6b07a"
+    "name": "generated-1479223367-57f27a73fd1734db06b6b07a"
 }
