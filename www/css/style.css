@@ -5,12 +5,10 @@ body {
     background-repeat: no-repeat;
     font-family: Verdana, sans-serif;
 }
-#sousin,#jusin,#clear,#okuru,#deau,#okini,#modoru {
+#sousin,#jusin,#clear,#okuru,#deau,#okini {
     -webkit-appearance: none;
     display: inline-block;
     width: 90px;
-    border-style: none;
-    font-size: 15px;
 }
 #okuru,#deau {
   margin: 20px;
@@ -44,7 +42,7 @@ form {
     margin-top: 20px;
 }
 
-div {
+.homebutton,.textarea {
   text-align: center;
 }
 
@@ -90,7 +88,22 @@ h3 {
   margin-top: 30px;
 }
 
-#modoru {
-  margin-top: 100px;
-  margin-left: 200px;
+#sousin {
+  width: 30%;
+  margin-top: 50px;
+}
+
+#writemodoru {
+  width: 90px;
+  margin-left: 100px;
+}
+
+#writebuttons {
+  margin-top: 70px;
+}
+#showmodoru {
+  width: 90px;
+  position: fixed;
+  left: 200px;
+  top: 350px;
 }

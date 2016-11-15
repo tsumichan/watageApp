@@ -44,16 +44,17 @@
                     contents.set("contents", cts)
                              .save()
                              .then(function(){
-                                $("#msg").append("内容を送信しました！<br>");
+                                // $("#msg").append("内容を送信しました！<br>");
+                                alert("送信完了！");
                              })
                              .catch(function(err){
-                              $("#msg").html("<p>error:" + error.message + "</p>");
+                              $("#msg").append("error:" + error.message + "<br>");
                              })
                     return false;
                 });
                 
                 //戻るボタン
-                $("#modoru").on("click", function() {
+                $("#writemodoru").on("click", function() {
                     location.href = "./home.html";
                 });
                   
@@ -65,8 +66,10 @@
 </head>
 <body>
     <div id ="youkoso"></div>
-        <div><textarea id="content" rows="5" cols="25"　maxlength="30" placeholder="おくることばをかいてね！"></textarea></div>
-        <input id="modoru" type="image" src="img/modoru_button.png" >
+        <div class="textarea"><textarea id="content" rows="5" cols="25"　maxlength="30" placeholder="おくることばをかいてね！"></textarea></div>
+        <div id="writebuttons">
+        <input id="sousin" type="image" src="img/sousin_button.png" >
+        <input id="writemodoru" type="image" src="img/modoru_button.png" >
         </div>
     <p id="msg"></p>
 </body>
